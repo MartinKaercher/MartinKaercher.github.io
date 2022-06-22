@@ -9,4 +9,4 @@ redirect_from:
 
 {% include base_path %}
 
-My [CV] ( http://MartinKaercher.github.io/files/MartinKaercher_cv.pdf ).
+ <embed src="https://MartinKaercher.github.io/files/MartinKaercher_cv.pdf" type="application/pdf" width="600px" height="500px" />
