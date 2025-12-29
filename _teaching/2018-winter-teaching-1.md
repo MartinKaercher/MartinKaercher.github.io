@@ -8,7 +8,7 @@ date: 2018-12-01
 location: "Heidelberg, Germany"
 ---
 
-Heading 1
+Details
 ======
 
 I supervised one experiment about building a rudimentary microscope in the practical
