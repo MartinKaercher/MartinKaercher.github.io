@@ -1,5 +1,5 @@
 ---
-title: "Student assistant"
+title: "Student assistant (2018)"
 collection: teaching
 type: "Practical lab course"
 permalink: /teaching/2018-winter-teaching-1
