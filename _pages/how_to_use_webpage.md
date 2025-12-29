@@ -1,5 +1,5 @@
 ---
-permalink: /
+permalink: /how-to-use-webpage/
 title: "Martin Kärcher"
 excerpt: "About me"
 author_profile: true
