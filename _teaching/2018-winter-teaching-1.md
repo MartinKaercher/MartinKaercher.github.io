@@ -12,4 +12,4 @@ Heading 1
 ======
 
 I supervised one experiment about building a rudimentary microscope in the practical
-course 'biophysical chemistry' attended by students of molecular biotechnology. I carried out short oral pre-exmanina and correct the lab protocols of the students
+course biophysical chemistry attended by students of molecular biotechnology. I carried out short oral pre-exmanina and correct the lab protocols of the students
