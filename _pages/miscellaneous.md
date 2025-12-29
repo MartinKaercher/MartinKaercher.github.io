@@ -8,11 +8,14 @@ redirect_from:
 ---
 
 
-## Go Colemak!
+Go Colemak!
+===
 Well, it seems there is nothing here yet, but stay tuned.
 
-## Vim
+Vim
+===
 Well, it seems there is nothing here yet, but stay tuned.
 
-## Origami
+Origami
+===
 Well, it seems there is nothing here yet, but stay tuned.

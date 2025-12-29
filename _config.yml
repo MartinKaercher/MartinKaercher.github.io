@@ -10,7 +10,7 @@ locale                   : "en-US"
 title                    : "Martin Kärcher"
 title_separator          : "-"
 name                     : &name "Martin Kärcher"
-description              : &description "Ph.D student"
+description              : &description "Postdoctoral researcher"
 url                      : https://MartinKaercher.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "MartinKaercher/MartinKaercher.github.io"
@@ -82,12 +82,12 @@ analytics:
 author:
   name             : "Martin Kärcher"
   avatar           : "Profile_pic.jpg"
-  bio              : "Physics PhD student with a focus on cosmology"
-  location         : "France, Germany"
+  bio              : "Postdoctoral researcher in physics with a specialisation in cosmology"
+  location         : "Italy, Germany"
   employer         :
 #  pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
 #  googlescholar    : "http://yourfullgooglescholarurl.com"
-  email            : "martin.karcher@lam.fr"
+  email            : "martin.karcher@unimi.it"
   researchgate     : "https://www.researchgate.net/profile/Martin-Kaercher"
   uri              :
   bitbucket        :
