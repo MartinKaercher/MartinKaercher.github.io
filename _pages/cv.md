@@ -7,6 +7,4 @@ redirect_from:
   - /resume
 ---
 
-{% include base_path %}
-
- <embed src="https://MartinKaercher.github.io/files/MartinKaercher_cv.pdf" type="application/pdf" width="600px" height="500px" />
+{% include pdf-embed.html file="/files/MartinKaercher_cv.pdf" title="CV" %}

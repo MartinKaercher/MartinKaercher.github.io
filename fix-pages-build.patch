@@ -1,0 +1,81 @@
+diff --git a/_includes/pdf-embed.html b/_includes/pdf-embed.html
+new file mode 100644
+index 0000000..ad6f9f1
+--- /dev/null
++++ b/_includes/pdf-embed.html
+@@ -0,0 +1,45 @@
++{% comment %}
++  Embed a PDF that lives in this repository.
++
++      {% include pdf-embed.html file="/files/MartinKaercher_cv.pdf" title="CV" %}
++      {% include pdf-embed.html file="/files/publications.pdf" title="publication list" height="90vh" %}
++
++  Shows download / new-tab buttons above the viewer, falls back to a plain
++  link on browsers that will not render a PDF inline (most mobile ones), and
++  prints a notice instead of a broken box if the file is not in the repo yet.
++{% endcomment %}
++
++{% include base_path %}
++
++{% assign pdf_title  = include.title  | default: page.title | default: "PDF" %}
++{% assign pdf_height = include.height | default: "85vh" %}
++
++{% if include.file contains "://" %}
++  {% assign pdf_url = include.file %}
++  {% assign pdf_found = true %}
++{% else %}
++  {% assign pdf_url = include.file | prepend: base_path %}
++  {% assign pdf_found = site.static_files | where: "path", include.file | first %}
++{% endif %}
++
++{% if pdf_found %}
++<div class="pdf-embed">
++  <p class="pdf-embed__actions">
++    <a class="btn" href="{{ pdf_url }}" download>Download {{ pdf_title }} (PDF)</a>
++    <a class="btn btn--inverse" href="{{ pdf_url }}" target="_blank" rel="noopener">Open in a new tab</a>
++  </p>
++  <object class="pdf-embed__object" data="{{ pdf_url }}#view=FitH"
++          type="application/pdf" style="height: {{ pdf_height }};">
++    <iframe class="pdf-embed__frame" src="{{ pdf_url }}#view=FitH"
++            title="{{ pdf_title }}" style="height: {{ pdf_height }};" loading="lazy"></iframe>
++    <p class="pdf-embed__fallback">
++      Your browser will not display PDFs inline &mdash;
++      <a href="{{ pdf_url }}">download {{ pdf_title }}</a> instead.
++    </p>
++  </object>
++</div>
++{% else %}
++<p class="notice--warning"><strong>{{ pdf_title }}</strong>: nothing found at
++<code>{{ include.file }}</code>. Add the PDF to the repository at that path
++and it will be shown here.</p>
++{% endif %}
+diff --git a/_pages/cv.md b/_pages/cv.md
+index a1d3698..c17588e 100644
+--- a/_pages/cv.md
++++ b/_pages/cv.md
+@@ -7,6 +7,4 @@ redirect_from:
+   - /resume
+ ---
+ 
+-{% include base_path %}
+-
+- <embed src="https://MartinKaercher.github.io/files/MartinKaercher_cv.pdf" type="application/pdf" width="600px" height="500px" />
++{% include pdf-embed.html file="/files/MartinKaercher_cv.pdf" title="CV" %}
+diff --git a/_pages/publications.md b/_pages/publications.md
+index 672590d..54bd59e 100644
+--- a/_pages/publications.md
++++ b/_pages/publications.md
+@@ -5,12 +5,4 @@ permalink: /publications/
+ author_profile: true
+ ---
+ 
+-{% if author.googlescholar %}
+-  You can also find my articles on <u><a href="{{author.googlescholar}}">my Google Scholar profile</a>.</u>
+-{% endif %}
+-
+-{% include base_path %}
+-
+-{% for post in site.publications reversed %}
+-  {% include archive-single-publication.html %}
+-{% endfor %}
++{% include pdf-embed.html file="/files/publications.pdf" title="publication list" %}

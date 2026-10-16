@@ -3,8 +3,11 @@ title: "Euclid preparation. XLI. Galaxy power spectrum modelling in real space"
 collection: publications
 permalink: /publication/Pezzotta_2312.00679
 date: 2023-12-01
+authors: 'Euclid Collaboration: A. Pezzotta, C. Moretti, M. Zennaro, et al. (including M. Kärcher)'
+status: 'Published in <i>Astronomy &amp; Astrophysics</i>, 687, A216 (2024)'
 venue: 'Astronomy & Astrophysics'
 paperurl: 'https://doi.org/10.1051/0004-6361/202348939'
+arxivurl: 'https://arxiv.org/abs/2312.00679'
 citation: 'Euclid Collaboration: A. Pezzotta, C. Moretti, M. Zennaro, et al. (including M. Kärcher) (2024). &quot;Euclid preparation. XLI. Galaxy power spectrum modelling in real space.&quot; <i>Astronomy &amp; Astrophysics</i>, 687, A216. doi: 10.1051/0004-6361/202348939'
 ---
 [Download paper here](https://doi.org/10.1051/0004-6361/202348939)
