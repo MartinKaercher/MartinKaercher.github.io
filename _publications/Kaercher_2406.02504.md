@@ -10,3 +10,5 @@ citation: 'M. Kärcher, J. Bel, S. de la Torre (2025). &quot;Towards an optimal 
 [Download paper here](https://doi.org/10.1051/0004-6361/202450977)
 
 [arXiv:2406.02504](https://arxiv.org/abs/2406.02504)
+
+Recommended citation: M. Kärcher, J. Bel, S. de la Torre (2025). "Towards an optimal marked correlation function analysis for the detection of modified Gravity." <i>Astronomy &amp; Astrophysics</i>, 694, A253. doi: 10.1051/0004-6361/202450977
