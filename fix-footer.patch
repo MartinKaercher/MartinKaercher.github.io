@@ -1,0 +1,86 @@
+diff --git a/_sass/_base.scss b/_sass/_base.scss
+index ef4015e..dc4dc44 100644
+--- a/_sass/_base.scss
++++ b/_sass/_base.scss
+@@ -1,16 +1,14 @@
+ /* ==========================================================================
+    BASE ELEMENTS
+    ========================================================================== */
+-html {
+-  /* sticky footer fix */
+-  position: relative;
+-  min-height: 100%;
+-}
+-
+ body {
++  /* sticky footer: the footer sits in normal flow and #main absorbs the slack,
++     so nothing has to reserve a hard-coded amount of space for it */
++  display: flex;
++  flex-direction: column;
++  min-height: 100vh;
+   margin: 0;
+   padding: 0;
+-  padding-bottom: 9em;
+   color: $text-color;
+   font-family: $global-font-family;
+   line-height: 1.5;
+diff --git a/_sass/_footer.scss b/_sass/_footer.scss
+index e7b1843..39b4cbb 100644
+--- a/_sass/_footer.scss
++++ b/_sass/_footer.scss
+@@ -4,17 +4,12 @@
+ 
+ .page__footer {
+   @include clearfix;
+-  float: left;
++  flex-shrink: 0;
+   margin-left: 0;
+   margin-right: 0;
+   width: 100%;
+   clear: both;
+-  /* sticky footer fix start */
+-  position: absolute;
+-  bottom: 0em;
+-  height: auto;
+-  /* sticky footer fix end */
+-  margin-top: 3em;
++  margin-top: 2em;
+   color: mix(#fff, $gray, 25%);
+   -webkit-animation: intro 0.3s both;
+           animation: intro 0.3s both;
+@@ -27,9 +22,9 @@
+     @include clearfix;
+     margin-left: auto;
+     margin-right: auto;
+-    margin-top: 2em;
++    margin-top: 1em;
+     max-width: 100%;
+-    padding: 0 1em 2em;
++    padding: 0 1em 1em;
+ 
+     @include breakpoint($x-large) {
+       max-width: $x-large;
+@@ -67,8 +62,8 @@
+ 
+   li {
+     display: inline-block;
+-    padding-top: 5px;
+-    padding-bottom: 5px;
++    padding-top: 2px;
++    padding-bottom: 2px;
+     font-family: $sans-serif-narrow;
+     font-size: $type-size-6;
+     text-transform: uppercase;
+diff --git a/_sass/_page.scss b/_sass/_page.scss
+index 8e66698..0596e8a 100644
+--- a/_sass/_page.scss
++++ b/_sass/_page.scss
+@@ -5,6 +5,8 @@
+ #main {
+   @include container;
+   @include clearfix;
++  flex: 1 0 auto;   /* absorbs the leftover height, keeping the footer at the bottom */
++  width: 100%;      /* a flex item with auto side margins would otherwise shrink to fit */
+   margin-top: 2em;
+   padding-left: 1em;
+   padding-right: 1em;

@@ -5,6 +5,8 @@
 #main {
   @include container;
   @include clearfix;
+  flex: 1 0 auto;   /* absorbs the leftover height, keeping the footer at the bottom */
+  width: 100%;      /* a flex item with auto side margins would otherwise shrink to fit */
   margin-top: 2em;
   padding-left: 1em;
   padding-right: 1em;
