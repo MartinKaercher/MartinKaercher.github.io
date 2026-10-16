@@ -2,17 +2,19 @@
   Embed a PDF that lives in this repository.
 
       {% include pdf-embed.html file="/files/MartinKaercher_cv.pdf" title="CV" %}
-      {% include pdf-embed.html file="/files/publications.pdf" title="publication list" height="90vh" %}
+      {% include pdf-embed.html file="/files/publications.pdf" title="publication list" height="1100px" %}
 
-  Shows download / new-tab buttons above the viewer, falls back to a plain
-  link on browsers that will not render a PDF inline (most mobile ones), and
-  prints a notice instead of a broken box if the file is not in the repo yet.
+  Shows download / new-tab buttons above the viewer plus a plain link below it
+  for browsers that will not render a PDF inline (most mobile ones), and prints
+  a notice instead of a broken box if the file is not in the repo yet.
+  Height is deliberately in px, not vh: a viewport-relative viewer is resized
+  by the browser while scrolling, which makes the page end move under you.
 {% endcomment %}
 
 {% include base_path %}
 
 {% assign pdf_title  = include.title  | default: page.title | default: "PDF" %}
-{% assign pdf_height = include.height | default: "85vh" %}
+{% assign pdf_height = include.height | default: "900px" %}
 
 {% if include.file contains "://" %}
   {% assign pdf_url = include.file %}
@@ -28,15 +30,10 @@
     <a class="btn" href="{{ pdf_url }}" download>Download {{ pdf_title }} (PDF)</a>
     <a class="btn btn--inverse" href="{{ pdf_url }}" target="_blank" rel="noopener">Open in a new tab</a>
   </p>
-  <object class="pdf-embed__object" data="{{ pdf_url }}#view=FitH"
-          type="application/pdf" style="height: {{ pdf_height }};">
-    <iframe class="pdf-embed__frame" src="{{ pdf_url }}#view=FitH"
-            title="{{ pdf_title }}" style="height: {{ pdf_height }};" loading="lazy"></iframe>
-    <p class="pdf-embed__fallback">
-      Your browser will not display PDFs inline &mdash;
-      <a href="{{ pdf_url }}">download {{ pdf_title }}</a> instead.
-    </p>
-  </object>
+  <iframe class="pdf-embed__frame" src="{{ pdf_url }}#view=FitH"
+          title="{{ pdf_title }}" style="height: {{ pdf_height }};" loading="lazy"></iframe>
+  <p class="pdf-embed__fallback">Not showing up?
+    <a href="{{ pdf_url }}">Download {{ pdf_title }}</a>.</p>
 </div>
 {% else %}
 <p class="notice--warning"><strong>{{ pdf_title }}</strong>: nothing found at
