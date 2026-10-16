@@ -3,9 +3,6 @@ main:
   - title: "Publications"
     url: /publications/
 
-  - title: "Miscellaneous"
-    url: /miscellaneous/    
-
   - title: "Teaching"
     url: /teaching/    
     
@@ -17,3 +14,7 @@ main:
     
   - title: "CV"
     url: /cv/
+
+  - title: "Miscellaneous"
+    url: /miscellaneous/    
+
