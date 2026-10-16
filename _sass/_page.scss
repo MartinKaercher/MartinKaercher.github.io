@@ -399,3 +399,21 @@
   font-size: $type-size-6;
   text-transform: uppercase;
 }
+
+.pdf-embed__actions {
+  margin-bottom: 1em;
+}
+
+.pdf-embed__object,
+.pdf-embed__frame {
+  display: block;
+  width: 100%;
+  min-height: 480px;
+  border: 1px solid $light-gray;
+  background-color: $light-gray;
+}
+
+.pdf-embed__fallback {
+  padding: 1em;
+  font-size: $type-size-6;
+}
