@@ -73,9 +73,11 @@ social:
 
 # Analytics
 analytics:
-  provider               :  "google-universal" # false (default), "google", "google-universal", "custom"
+  provider               :  "goatcounter" # false (default), "google", "google-universal", "goatcounter", "custom"
   google:
     tracking_id          :
+  goatcounter:
+    code                 :  # the site code you chose at goatcounter.com, e.g. "martinkaercher"
 
 
 # Site Author
@@ -309,3 +311,8 @@ compress_html:
   clippings: all
   ignore:
     envs: development
+
+analytics:
+    provider               :  "goatcounter"
+    goatcounter:
+    code                 :  "martincosmo"

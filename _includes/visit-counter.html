@@ -1,0 +1,24 @@
+{% comment %}
+  Site-wide visitor counter, read from the same GoatCounter site that
+  _includes/analytics-providers/goatcounter.html reports to.
+
+  Requires "Allow adding visitor counts on your website" to be ticked in the
+  GoatCounter settings, otherwise the endpoint returns 403 and the counter
+  stays hidden. It also stays hidden if the request fails for any other reason
+  (ad blockers block GoatCounter), so the number is a lower bound.
+{% endcomment %}
+
+{% if site.analytics.goatcounter.code %}
+<span class="visit-counter" id="visit-counter" hidden>Visits: <span id="visit-count"></span></span>
+<script>
+  (function () {
+    fetch('https://{{ site.analytics.goatcounter.code }}.goatcounter.com/counter/TOTAL.json')
+      .then(function (r) { return r.ok ? r.json() : Promise.reject(r.status); })
+      .then(function (d) {
+        document.getElementById('visit-count').textContent = d.count_unique || d.count;
+        document.getElementById('visit-counter').hidden = false;
+      })
+      .catch(function () { /* leave the counter hidden */ });
+  })();
+</script>
+{% endif %}
