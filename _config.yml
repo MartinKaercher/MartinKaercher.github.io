@@ -77,7 +77,7 @@ analytics:
   google:
     tracking_id          :
   goatcounter:
-    code                 :  # the site code you chose at goatcounter.com, e.g. "martinkaercher"
+    code                 :  "martincosmo" # the site code you chose at goatcounter.com
 
 
 # Site Author
@@ -311,8 +311,3 @@ compress_html:
   clippings: all
   ignore:
     envs: development
-
-analytics:
-    provider               :  "goatcounter"
-    goatcounter:
-    code                 :  "martincosmo"
